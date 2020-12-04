@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -17,8 +18,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void query() {
-        User user = userMapper.queryInfo();
-        log.info("获取了用户信息 {}", user);
+        List<User> users = userMapper.queryInfo();
+        log.info("获取了用户信息 {}", users);
     }
 
     @Override

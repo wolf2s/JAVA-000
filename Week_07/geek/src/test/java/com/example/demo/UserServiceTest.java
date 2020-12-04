@@ -23,7 +23,7 @@ public class UserServiceTest {
 
     @Test
     public void testSave(){
-        testService.saveInfo(2,"2");
+        testService.saveInfo(2,"张三");
     }
 
 }

@@ -3,6 +3,8 @@ package com.example.demo.mapper;
 import com.example.demo.model.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserMapper {
 
@@ -11,7 +13,7 @@ public interface UserMapper {
      *
      * @return
      */
-    User queryInfo();
+    List<User> queryInfo();
 
     /**
      * 保存信息
