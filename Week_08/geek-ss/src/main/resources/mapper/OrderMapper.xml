@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.model.Order">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+    </resultMap>
+
+
+    <select id="queryList" resultMap="BaseResultMap">
+        select * from order;
+    </select>
+
+    <select id="getById" resultMap="BaseResultMap">
+        select * from order where  id=#{id};
+    </select>
+
+    <insert id="saveInfo" parameterType="com.example.demo.model.Order">
+      insert into order(id,user_id,user_name)values(#{id},#{userId},#{userName})
+    </insert>
+
+    <update id="updateInfo" parameterType="com.example.demo.model.Order">
+        update order set user_name=#{userName} where id=#{id}
+    </update>
+
+
+</mapper>
